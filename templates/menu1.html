@@ -1,7 +1,65 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Menu 1</title>
+<link rel="stylesheet" href="../statics/styles.css">
+<style>
+.nav {
+  background: #111;
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+}
+.nav a {
+  color: var(--text);
+  margin-right: 20px;
+  text-decoration: none;
+  font-family: 'Press Start 2P', cursive;
+}
+.dropdown { position: relative; display: inline-block; }
+.dropdown-content {
+    display: none; 
+    position: absolute; 
+    background: #222;
+    min-width: 150px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    z-index: 10;
+}
+.dropdown-content a {
+    display: block; 
+    padding: 0.5rem; 
+    color: var(--text); 
+    text-decoration: none;
+}
+.dropdown:hover .dropdown-content { display: block; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Menu 1</h1>
+  <p>Usuario: <span class="usuarioActual">—</span></p>
+</header>
 
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Menú Sidebar</title><link rel="stylesheet" href="../statics/styles.css"></head>
-<body><header><h1>Menú Sidebar</h1><p>Usuario: <span class="usuarioActual">—</span></p></header>
-<div class="container"><p>Menú lateral retro</p></div>
+<div class="container">
+  <div class="nav">
+    <div class="dropdown">
+      <a href="#">Cursos ▼</a>
+      <div class="dropdown-content">
+        <a href="#">Python</a>
+        <a href="#">Java</a>
+        <a href="#">SQL</a>
+      </div>
+    </div>
+  </div>
+
+  <a href="../index.html" class="btn" style="margin-top:1rem;">Volver a Inicio</a>
+</div>
+
 <footer>© Eduardo Aranda – 25/11/2025</footer>
-<script src="../js/script_bienvenida.js"></script></body></html>
+<script src="js/script_bienvenida.js"></script>
+</body>
+</html>

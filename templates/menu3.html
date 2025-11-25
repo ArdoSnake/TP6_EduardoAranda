@@ -1,7 +1,97 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Menu 3</title>
+<link rel="stylesheet" href="../statics/styles.css">
+<style>
+.menu { 
+  background:#111; 
+  padding:1rem; 
+  border-radius:8px; 
+  display:flex; 
+  justify-content:center; 
+}
+.menu a { 
+  color: var(--text); 
+  margin-right:20px; 
+  text-decoration:none; 
+  font-family:'Press Start 2P',cursive; 
+}
+.megadrop { 
+  position: relative; 
+  display:inline-block; 
+}
+.megabox {
+    position:absolute; 
+    left:0; top:40px;
+    display:none; 
+    background:#222; 
+    width:300px;
+    padding:20px; 
+    border-radius:8px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.5); 
+    z-index:10;
+}
+.megabox div { 
+    padding:5px 0; 
+    color: var(--text); 
+}
+.megabox hr { border-color:#444; }
 
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Menú Radial</title><link rel="stylesheet" href="../statics/styles.css"></head>
-<body><header><h1>Menú Radial</h1><p>Usuario: <span class="usuarioActual">—</span></p></header>
-<div class="container"><p>Menú circular retro</p></div>
+.menu a:hover { color: var(--accent); transition:0.3s; cursor:pointer; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Menu 3</h1>
+  <p>Usuario: <span class="usuarioActual">—</span></p>
+</header>
+
+<div class="container">
+  <div class="menu">
+    <div class="megadrop">
+      <a href="#" onclick="toggleMegaMenu(event)">Programación ▼</a>
+      <div class="megabox">
+        <div><strong>Lenguajes</strong></div>
+        <div>Python</div>
+        <div>Java</div>
+        <div>C#</div>
+        <hr>
+        <div><strong>Bases de Datos</strong></div>
+        <div>SQL</div>
+        <div>MongoDB</div>
+      </div>
+    </div>
+  </div>
+
+  <a href="../index.html" class="btn" style="margin-top:1rem;">Volver a Inicio</a>
+</div>
+
 <footer>© Eduardo Aranda – 25/11/2025</footer>
-<script src="../js/script_bienvenida.js"></script></body></html>
+
+<script src="js/script_bienvenida.js"></script>
+<script>
+// Función para toggle del Mega Menu
+function toggleMegaMenu(e) {
+  e.preventDefault(); // evita que el enlace navegue
+  const box = e.target.nextElementSibling;
+  // ocultar otros megabox abiertos
+  document.querySelectorAll('.megabox').forEach(m => {
+    if(m !== box) m.style.display = 'none';
+  });
+  // toggle display
+  box.style.display = box.style.display === 'block' ? 'none' : 'block';
+}
+
+// Cerrar la megabox si clic afuera
+document.addEventListener('click', function(e){
+  const mega = document.querySelector('.megabox');
+  if(!e.target.closest('.megadrop')) {
+    mega.style.display = 'none';
+  }
+});
+</script>
+</body>
+</html>
