@@ -1,0 +1,38 @@
+
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TP6 Retro Geek</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./statics/styles.css">
+</head>
+<body>
+<header><h1>TP6 Retro Geek</h1><p>Bienvenido <span class="usuarioActual">—</span></p></header>
+<div class="container">
+<details><summary>Multimedia</summary>
+<ul class="dropdown">
+<li><a href="templates/multimedia1.html">Mapas Geek</a></li>
+<li><a href="templates/multimedia2.html">Videos Retro</a></li>
+<li><a href="templates/multimedia3.html">Audio 8-bit</a></li>
+</ul></details>
+<details><summary>Menús</summary>
+<ul class="dropdown">
+<li><a href="templates/menu1.html">Sidebar</a></li>
+<li><a href="templates/menu2.html">Cards</a></li>
+<li><a href="templates/menu3.html">Radial</a></li>
+</ul></details>
+<a class="btn" href="index.html">Inicio</a>
+</div>
+<footer>© Eduardo Aranda – 25/11/2025</footer>
+<div class="modal" id="welcomeModal">
+<div class="modal-content">
+<h2>Bienvenido</h2>
+<form id="welcomeForm">
+<input id="nombre" placeholder="Nombre" required><br><br>
+<input id="apellido" placeholder="Apellido" required><br><br>
+<button type="submit" class="btn">Entrar</button>
+</form>
+</div></div>
+<script src="./js/script_bienvenida.js"></script>
+</body></html>
