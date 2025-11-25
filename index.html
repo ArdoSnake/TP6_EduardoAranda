@@ -1,95 +1,39 @@
+
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>TP6 Retro Geek</title>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./statics/styles.css">
-<style>
-.container { text-align:center; margin-top:2rem; }
-.btn { display:inline-block; padding:.8rem 1.2rem; margin:.5rem; background:var(--primary); color:#fff; text-decoration:none; border-radius:8px; transition:0.3s; }
-.btn:hover { background:var(--secondary); transform:scale(1.05); }
-details summary { cursor:pointer; padding:.8rem; background:var(--accent); color:#fff; border-radius:8px; display:inline-block; margin:.5rem 0; }
-ul.dropdown { list-style:none; padding:.5rem; margin:0; background:#222; border-radius:8px; text-align:left; display:none; position:absolute; }
-ul.dropdown li a { color:#fff; text-decoration:none; display:block; padding:.4rem; }
-details[open] ul.dropdown { display:block; }
-
-/* Modal */
-.modal { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,.8); display:flex; align-items:center; justify-content:center; }
-.modal-content { background:#111; padding:2rem; border-radius:12px; text-align:center; }
-.modal-content input { padding:.5rem; margin:.3rem 0; width:80%; border-radius:6px; border:none; font-family:'Press Start 2P',cursive; }
-
-/* Música invisible */
-audio { display:none; }
-</style>
 </head>
 <body>
-<header>
-  <h1>TP6 Retro Geek</h1>
-  <p>Bienvenido <span class="usuarioActual">—</span></p>
-</header>
-
+<header><h1>TP6 Retro Geek</h1><p>Bienvenido <span class="usuarioActual">—</span></p></header>
 <div class="container">
-  <details>
-    <summary>Multimedia</summary>
-    <ul class="dropdown">
-      <li><a href="templates/multimedia1.html">Mapas Geek</a></li>
-      <li><a href="templates/multimedia2.html">Videos Retro</a></li>
-      <li><a href="templates/multimedia3.html">Audio 8-bit</a></li>
-    </ul>
-  </details>
-
-  <details>
-    <summary>Menús</summary>
-    <ul class="dropdown">
-      <li><a href="templates/menu1.html">Dropdown</a></li>
-      <li><a href="templates/menu2.html">Dropdown Click</a></li>
-      <li><a href="templates/menu3.html">Mega Menu</a></li>
-    </ul>
-  </details>
-
-  <a class="btn" href="index.html">Inicio</a>
+<details><summary>Multimedia</summary>
+<ul class="dropdown">
+<li><a href="templates/multimedia1.html">Mapas Geek</a></li>
+<li><a href="templates/multimedia2.html">Videos Retro</a></li>
+<li><a href="templates/multimedia3.html">Audio 8-bit</a></li>
+</ul></details>
+<details><summary>Menús</summary>
+<ul class="dropdown">
+<li><a href="templates/menu1.html">Dropdown</a></li>
+<li><a href="templates/menu2.html">Dropdown Click</a></li>
+<li><a href="templates/menu3.html">Mega Menu</a></li>
+</ul></details>
+<a class="btn" href="index.html">Inicio</a>
 </div>
-
 <footer>© Eduardo Aranda – 25/11/2025</footer>
-
-<!-- Modal de bienvenida -->
 <div class="modal" id="welcomeModal">
-  <div class="modal-content">
-    <h2>Bienvenido</h2>
-    <form id="welcomeForm">
-      <input id="nombre" placeholder="Nombre" required><br>
-      <input id="apellido" placeholder="Apellido" required><br><br>
-      <button type="submit" class="btn">Entrar</button>
-    </form>
-  </div>
-</div>
+<div class="modal-content">
+<h2>Bienvenido</h2>
+<form id="welcomeForm">
+<input id="nombre" placeholder="Nombre" required><br><br>
+<input id="apellido" placeholder="Apellido" required><br><br>
+<button type="submit" class="btn">Entrar</button>
+</form>
+</div></div>
+<script src="./js/script_bienvenida.js"></script>
+</body></html>
 
-<!-- Música chill invisible -->
-<audio id="bgMusic" autoplay loop muted>
-  <source src="statics/audio/musica-chill.mp4" type="audio/mp4">
-</audio>
-
-<script>
-const modal = document.getElementById('welcomeModal');
-const form = document.getElementById('welcomeForm');
-const usuarioSpan = document.querySelector('.usuarioActual');
-const music = document.getElementById('bgMusic');
-
-// Mostrar modal al cargar
-window.onload = () => modal.style.display = 'flex';
-
-form.addEventListener('submit', (e)=>{
-  e.preventDefault();
-  const nombre = document.getElementById('nombre').value;
-  const apellido = document.getElementById('apellido').value;
-  usuarioSpan.textContent = nombre + ' ' + apellido;
-  alert(`¡Bienvenido ${nombre} ${apellido}!`);
-  modal.style.display = 'none';
-  // Activar música
-  music.muted = false;
-});
-</script>
-</body>
-</html>
