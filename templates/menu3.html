@@ -52,16 +52,12 @@
 <div class="container">
   <div class="menu">
     <div class="megadrop">
-      <a href="#" onclick="toggleMegaMenu(event)">Programación ▼</a>
+      <a href="#" onclick="toggleMegaMenu(event)">Multimedia ▼</a>
       <div class="megabox">
-        <div><strong>Lenguajes</strong></div>
-        <div>Python</div>
-        <div>Java</div>
-        <div>C#</div>
-        <hr>
-        <div><strong>Bases de Datos</strong></div>
-        <div>SQL</div>
-        <div>MongoDB</div>
+        <div><strong>Opciones</strong></div>
+        <div><a href="multimedia1.html">Mapas</a></div>
+        <div><a href="multimedia2.html">Videos Retro</a></div>
+        <div><a href="multimedia3.html">Audio 8-bit</a></div>
       </div>
     </div>
   </div>
@@ -70,18 +66,15 @@
 </div>
 
 <footer>© Eduardo Aranda – 25/11/2025</footer>
-
-<script src="js/script_bienvenida.js"></script>
+<script src="../js/script_bienvenida.js"></script>
 <script>
 // Función para toggle del Mega Menu
 function toggleMegaMenu(e) {
   e.preventDefault(); // evita que el enlace navegue
   const box = e.target.nextElementSibling;
-  // ocultar otros megabox abiertos
   document.querySelectorAll('.megabox').forEach(m => {
     if(m !== box) m.style.display = 'none';
   });
-  // toggle display
   box.style.display = box.style.display === 'block' ? 'none' : 'block';
 }
 
